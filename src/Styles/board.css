@@ -43,3 +43,7 @@ h1{
 .winner{
     color:  #00FF00;
 }
+
+.draw{
+    color: gray;
+}
