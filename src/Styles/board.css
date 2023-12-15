@@ -1,0 +1,21 @@
+*{
+    padding: 10px;
+}
+
+.box{
+    height: 70px;
+    width: 70px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.board-row{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
