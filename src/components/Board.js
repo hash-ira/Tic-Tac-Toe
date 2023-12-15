@@ -7,6 +7,7 @@ export default function Board(){
     const tempArr = [1 , 2 , 3];
     const [arr , setArr] = React.useState(tempArr.map(item => (new Array(3).fill(" "))));
     const [winMsg , setWinMsg] = React.useState(0);
+
     function toggleTurn(){
         const winner = calculateWinner(arr);
         if(winner !== 0){
@@ -19,9 +20,9 @@ export default function Board(){
 
     
     return (
-        <>
+        <div className="container">
             {winMsg === 0 && <h1>{ `${turn ? "First" : "Second"} Player's turn` }</h1>}
-            {winMsg !== 0 && <h1>{`Player ${winMsg === 1 ? "First" : "Second"} is the Winner`}</h1>}
+            {winMsg !== 0 && <h1 className="winner">{`Player ${winMsg === 1 ? "First" : "Second"} is the Winner`}</h1>}
             <div className="board-row">
                 {tempArr.map(item => (
                     <Square 
@@ -66,7 +67,7 @@ export default function Board(){
                     />
                 ) )}
             </div>
-        </>
+        </div>
     );
 }
 
