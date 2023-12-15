@@ -3,22 +3,23 @@ import "./../Styles/board.css"
 import Square from "./Square.js"
 
 export default function Board(){
+    const [turn, setTurn] = React.useState(true);
+    const tempArr = [1 , 2 ,3];
+
+    function toggleTurn(){
+        setTurn(!turn);
+    }
+
     return (
         <>
             <div className="board-row">
-                <Square value = "1"/>
-                <Square value = "2"/>
-                <Square value = "3"/>
+                {tempArr.map(item => (<Square turn = {turn} toggleTurn = {toggleTurn}/>) )}
             </div>
             <div className="board-row">
-                <Square value = "4"/>
-                <Square value = "5"/>
-                <Square value = "6"/>
+                {tempArr.map(item => (<Square turn = {turn} toggleTurn = {toggleTurn}/>) )}
             </div>
             <div className="board-row">
-                <Square value = "7"/>
-                <Square value = "8"/>
-                <Square value = "9"/>
+                {tempArr.map(item => (<Square turn = {turn} toggleTurn = {toggleTurn}/>) )}
             </div>
         </>
     );
