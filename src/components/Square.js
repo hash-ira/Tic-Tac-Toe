@@ -5,6 +5,7 @@ export default function Square(props){
     const [val ,setVal] = React.useState(" ");
 
     function toggleBox(){
+        if(props.winMsg !== 0) return;
         if(val === " "){
             if(props.turn) setVal("X");
             else setVal("O");
@@ -12,7 +13,7 @@ export default function Square(props){
             const newArr = [...props.arr];
             if(props.turn) newArr[props.x][props.y] = "X";
             else newArr[props.x][props.y] = "O";
-            
+
             props.setArr(newArr);
             props.toggleTurn();
         }else{

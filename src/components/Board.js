@@ -9,7 +9,6 @@ export default function Board(){
     const [winMsg , setWinMsg] = React.useState(0);
     function toggleTurn(){
         const winner = calculateWinner(arr);
-        console.log(winner)
         if(winner !== 0){
             if(turn) setWinMsg(1);
             else setWinMsg(2);
@@ -17,8 +16,6 @@ export default function Board(){
         }
         setTurn(!turn);
     }
-
-    console.log(arr);
 
     
     return (
@@ -31,6 +28,7 @@ export default function Board(){
                         id = {item}
                         x = {0}
                         y = {item - 1}
+                        winMsg = {winMsg}
                         arr = {arr}
                         setArr = {setArr}
                         turn = {turn} 
@@ -45,6 +43,7 @@ export default function Board(){
                         id = {3 + item}
                         x = {1}
                         y = {item - 1}
+                        winMsg = {winMsg}
                         arr = {arr}
                         setArr = {setArr}
                         turn = {turn} 
@@ -59,6 +58,7 @@ export default function Board(){
                         id = {6 + item}
                         x = {2}
                         y = {item - 1}
+                        winMsg = {winMsg}
                         arr = {arr}
                         setArr = {setArr}
                         turn = {turn}
